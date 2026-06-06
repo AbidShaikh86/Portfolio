@@ -113,10 +113,32 @@ function App() {
         trigger: "#contact",
       }
     })
+
+    const handleWheelUp = () => {
+      gsap.to(".navbar",{
+        y: -100,
+        duration: 1
+      })
+    }
+    const handleWheelDown = () => {
+      gsap.to(".navbar",{
+        y: 0,
+        duration: 0.3
+      })
+    }
+
+    document.body.addEventListener("wheel",(e) => {   
+      if(e.layerY > 200){
+        handleWheelUp()
+      }else{
+        handleWheelDown()
+      }
+    })
+
   }, {scope: container});
 
   return (
-    <div ref={container}>
+    <div id='papa' ref={container}>
       <Navbar />
       <Hero />
       <Projects />
