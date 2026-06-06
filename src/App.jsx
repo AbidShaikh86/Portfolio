@@ -77,6 +77,42 @@ function App() {
       opacity: 0,
       duration: 0.5
     },"-=0.5")
+
+    // Experience and Education section animation
+    let tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#experience",
+        start: "top 50%",
+        end: "top 0",
+        scrub: 1
+      }
+    })
+    tl3.from("#experience h2",{
+      y: -300,
+      opacity: 0,
+      duration: 0.4
+    }).from("#exp-1",{
+      x: -300,
+      opacity: 0,
+      duration: 0.6
+    }).from("#exp-2",{
+      x: -300,
+      opacity: 0,
+      duration: 0.6
+    }).from("#exp-3",{
+      x: -300,
+      opacity: 0,
+      duration: 0.6
+    })
+
+    gsap.from("#contact",{
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger:{
+        trigger: "#contact",
+      }
+    })
   }, {scope: container});
 
   return (
