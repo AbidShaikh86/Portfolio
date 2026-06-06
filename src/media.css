@@ -1,0 +1,161 @@
+@media (max-width: 1230px) {
+    .main{
+        width: 70vw;
+        justify-content: center;
+    }
+    .exp-logo{
+        img{
+            width: 150px;
+        }
+    }
+    .exp-box{
+        width: 80%;
+    }
+}
+@media (max-width: 940px) {
+    .navbar{
+        padding: 35px 7vw;
+    }
+    .main{
+        width: 80vw;
+        justify-content: center;
+    }
+    .project{
+        h3{
+            font-size: 1rem;
+        }
+        button{
+            padding: 10px 20px;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .navbar{
+        padding: 35px 7vw;
+    }
+    .main{
+        span{
+            font-size: 1.1rem;
+        }
+    }
+    .btn{
+        height: 7vh;
+        width: 200px;
+    }
+    .project{
+        h3{
+            font-size: .8rem;
+        }
+    }
+    .exp-logo{
+        img{
+            width: 100px;
+        }
+    }
+    .exp-box{
+        width: 90%;
+        padding: 2vh 5vw;
+        p{
+            text-align: left;
+        }
+        ul{
+            li{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .role{
+        display: flex;
+        flex-direction: column;
+        span{
+            width: 100%;
+        }
+        
+    }
+    .Footer{
+        padding: 10vh;
+    }
+    .nav{
+        li{
+            display: none;
+        }
+        #menu{
+            display: block;
+        }
+    }
+}
+@media (max-width: 530px) {
+    .navbar{
+        padding: 35px 7vw;
+    }
+    .main{
+        span{
+            font-size: 1.1rem;
+        }
+    }
+    .btn{
+        height: 7vh;
+        width: 120px;
+        font-size: .8rem;
+    }
+    .project{
+        h3{
+            font-size: .6rem;
+        }
+        button{
+            padding: 7px 15px;
+            font-size: 0.5rem;
+        }
+    }
+    .Footer{
+        padding: 5vh;
+        ul{
+            li{
+                font-size: .8rem;
+            }
+        }
+    }
+    .mail{
+        img{
+            height: 25px;
+        }
+        a{
+            font-size: .8rem;
+            gap: 5px;
+        }
+    }
+}
+@media (max-width: 430px) {
+    .main{
+        width: 91%;
+        h2{
+            font-size: 1.7rem;
+        }
+    }
+    .sidebar{
+        width: 100%;
+    }
+    .project{
+        gap: 10px;
+        width: 45vw;
+    }
+    .projects{
+        gap: 10px;
+    }
+    .exp-box{
+        h3{
+            font-size: 1rem;
+        }
+        p{
+            font-size: .8rem;
+        }
+    }
+    .role{
+        h4{
+            font-size: .9rem;
+        }
+    }
+    .Footer{
+        padding: 3vh;
+    }
+}
