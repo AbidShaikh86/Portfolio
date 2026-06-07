@@ -20,6 +20,9 @@
     .projects{
         height: 65dvh;
     }
+    .Footer{
+        padding: 17vh;
+    }
 }
 @media (max-width: 940px) {
     .navbar{
@@ -47,6 +50,9 @@
     }
     .projects{
         height: 50dvh;
+    }
+    .Footer{
+        padding: 13vh;
     }
 }
 @media (max-width: 700px) {
@@ -96,9 +102,8 @@
         
     }
     .Footer{
-        padding: 10vh;
+        padding: 7vh;
     }
-    
 }
 @media (max-width: 530px) {
     .navbar{
@@ -130,7 +135,7 @@
         }
     }
     .Footer{
-        padding: 5vh;
+       padding: 4vh;
         ul{
             li{
                 font-size: .8rem;
@@ -178,6 +183,6 @@
         }
     }
     .Footer{
-        padding: 3vh;
+       
     }
 }
