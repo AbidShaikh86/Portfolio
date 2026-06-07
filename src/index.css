@@ -45,19 +45,28 @@ body{
   justify-content: center;
 }
 .sidebar{
+  z-index: 999;
   position: fixed;
-  height: 100dvh;
-  right: 0;
   top: 0;
-  width: 60%;
-  padding: 30px;
-  display: none;
+  right: 0;
+  height: 100dvh;
+  width: 50%;
+  padding: 2vh 5vw;
+  display: flex;
+  gap: 20px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 30px;
-  background-color: #ffffff96;
+  font-size: 1.5rem;
+  background-color: #ffffff94;
   backdrop-filter: blur(10px);
+  li:first-child{
+    margin-left: auto;
+    img{
+      height: 40px;
+      
+    }
+  }
 }
 #menu{
   display: none;
@@ -79,6 +88,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9;
 }
 .main{
   height: max-content;
@@ -88,17 +98,20 @@ body{
   gap: 3vh;
   align-items: center;
   justify-content: center;
+  z-index: 9;
   img{
     height: 25vh;
-    
+    z-index: 9;
   }
   h2{
     font-size: 2rem;
+    z-index: 9;
   }
   span{
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 3vh;
+    z-index: 9;
   }
 }
 .container{
