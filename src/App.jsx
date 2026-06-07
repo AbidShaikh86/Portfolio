@@ -114,25 +114,32 @@ function App() {
       }
     })
 
-    const handleWheelUp = () => {
-      gsap.to(".navbar",{
-        y: -100,
-        duration: 1
-      })
-    }
-    const handleWheelDown = () => {
-      gsap.to(".navbar",{
-        y: 0,
-        duration: 0.3
-      })
-    }
+    // const handleWheelUp = () => {
+    //   gsap.to(".navbar",{
+    //     y: -100,
+    //     duration: 1
+    //   })
+    // }
+    // const handleWheelDown = () => {
+    //   gsap.to(".navbar",{
+    //     y: 0,
+    //     duration: 0.3
+    //   })
+    // }
 
-    document.body.addEventListener("wheel",(e) => {   
-      if(e.layerY > 200){
-        handleWheelUp()
-      }else{
-        handleWheelDown()
-      }
+    // document.body.addEventListener("wheel",(e) => {   
+    //   if(e.layerY > 200){
+    //     handleWheelUp()
+    //   }else{
+    //     handleWheelDown()
+    //   }
+    // })
+
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "200px top",
+      onEnter: () => gsap.to(".navbar", { y: -100, duration: 1 }),
+      onLeaveBack: () => gsap.to(".navbar", { y: 0, duration: 0.3 })
     })
 
   }, {scope: container});

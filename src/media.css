@@ -1,4 +1,10 @@
 @media (max-width: 1230px) {
+    .navbar{
+        padding: 35px 5vw;
+    }
+    .nav-item{
+        width: 15vw;
+    }
     .main{
         width: 70vw;
         justify-content: center;
@@ -11,10 +17,21 @@
     .exp-box{
         width: 80%;
     }
+    .projects{
+        height: 65dvh;
+    }
 }
 @media (max-width: 940px) {
     .navbar{
-        padding: 35px 7vw;
+        padding: 35px 5vw;
+    }
+    #menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-item{
+        display: none;
     }
     .main{
         width: 80vw;
@@ -28,10 +45,13 @@
             padding: 10px 20px;
         }
     }
+    .projects{
+        height: 50dvh;
+    }
 }
 @media (max-width: 700px) {
     .navbar{
-        padding: 35px 7vw;
+        padding: 35px 5vw;
     }
     .main{
         span{
@@ -41,6 +61,9 @@
     .btn{
         height: 7vh;
         width: 200px;
+    }
+    .projects{
+        height: 35dvh;
     }
     .project{
         h3{
@@ -75,14 +98,7 @@
     .Footer{
         padding: 10vh;
     }
-    .nav{
-        li{
-            display: none;
-        }
-        #menu{
-            display: block;
-        }
-    }
+    
 }
 @media (max-width: 530px) {
     .navbar{
@@ -97,6 +113,9 @@
         height: 7vh;
         width: 120px;
         font-size: .8rem;
+    }
+    .projects{
+        height: 25dvh;
     }
     .project{
         h3{
