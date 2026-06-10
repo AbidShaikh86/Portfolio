@@ -1,5 +1,4 @@
 import React, {useRef} from 'react'
-import avatar from './img/Avatar.jpeg'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
@@ -50,7 +49,7 @@ const Hero = () => {
         <section ref={container} className='hero-page' id='home'>
             <div className="main">
                 <img
-                    src={avatar}
+                    src='https://i.ibb.co/V07TFD9x/Avatar.jpg'
                     alt=""
                 />
                 <h2 className='left'>Hi, I am GULAMABID</h2>

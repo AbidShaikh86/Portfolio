@@ -1,6 +1,4 @@
 import React, {useRef} from 'react'
-import thumb1 from "./img/thumb-1.png"
-import thumb2 from "./img/thumb-2.png"
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
@@ -52,7 +50,7 @@ const Projects = () => {
             <div className="projects">
                 <div className="project" id='project-1' onMouseEnter={handleMouseEnterCard} onMouseLeave={handleMouseLeaveCard}>
                     <img
-                        src={thumb1}
+                        src='https://i.ibb.co/zWRNRzNS/thumb-1.png'
                         alt=""
                     />
                     <h3>Visiter Pass Management System</h3>
@@ -60,7 +58,7 @@ const Projects = () => {
                 </div>
                 <div className="project" id='project-2' onMouseEnter={handleMouseEnterCard} onMouseLeave={handleMouseLeaveCard}>
                     <img
-                        src={thumb2}
+                        src='https://i.ibb.co/1JRFK9HZ/thumb-2.png'
                         alt=""
                     />
                     <h3>Task Master</h3>
