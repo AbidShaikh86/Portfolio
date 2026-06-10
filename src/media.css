@@ -69,9 +69,14 @@
         width: 200px;
     }
     .projects{
-        height: 35dvh;
+        height: 105dvh;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2vh 5vw;
+        overflow-y: hidden;
     }
     .project{
+        width: 80%;
         h3{
             font-size: .8rem;
         }
@@ -119,24 +124,20 @@
         width: 120px;
         font-size: .8rem;
     }
-    .projects{
-        height: 25dvh;
-    }
-    .project{
-        h3{
-            font-size: .6rem;
-        }
-        button{
-            padding: 7px 15px;
-            font-size: 0.5rem;
-        }
-    }
     .Footer{
        padding: 4vh;
         ul{
             li{
                 font-size: .8rem;
             }
+        }
+    }
+    .projects{
+        height: 85dvh;
+    }
+    .project{
+        h3{
+            font-size: 1rem;
         }
     }
     .mail{
@@ -161,19 +162,20 @@
         font-size: 2rem;
         width: 100%;
     }
-    .project{
-        gap: 10px;
-        width: 45vw;
-    }
-    .projects{
-        gap: 10px;
-    }
     .exp-box{
         h3{
             font-size: 1rem;
         }
         p{
             font-size: .8rem;
+        }
+    }
+    .projects{
+        height: 75dvh;
+    }
+    .project{
+        h3{
+            font-size: 0.8rem;
         }
     }
     .role{
