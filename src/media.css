@@ -109,9 +109,6 @@
     .navbar{
         padding: 35px 7vw;
     }
-    .sidebar{
-        align-items: center;
-    }
     .main{
         span{
             font-size: 1.1rem;
@@ -160,6 +157,8 @@
         }
     }
     .sidebar{
+        padding-left: 15vw;
+        font-size: 2rem;
         width: 100%;
     }
     .project{

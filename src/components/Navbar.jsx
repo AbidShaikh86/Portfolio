@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import logo from "./img/Logo.png"
 import menu from './img/menu.svg'
 import close from './img/close.svg'
 import { Link } from 'react-scroll'
@@ -10,11 +9,38 @@ const Navbar = () => {
   let [side, setSide] = useState('none')
   const container = useRef(null)
 
+  let tl = gsap.timeline()
+
   const openSidebar = () => {
-    setSide('flex')
+    
+    tl.to('.sidebar',{
+      x: 0,
+      duration: 0.3,
+      opacity: 1
+    })
+    tl.to('.sidebar li',{
+      x: 0,
+      opacity: 1,
+      duration: 0.3,
+      stagger: 0.2
+    })
+    // setSide('flex')
   }
   const closeSidebar = () => {
-    setSide('none')
+    // let tl = gsap.timeline()
+    tl.to('.sidebar li',{
+      x: '100%',
+      opacity: 0,
+      duration: 0.1,
+      stagger: -0.1
+    })
+    tl.to('.sidebar',{
+      x: '100%',
+      duration: 0.1,
+      opacity: 0
+    })
+    
+    // setSide('none')
   }
 
   useGSAP({ scope: container })
@@ -38,7 +64,7 @@ const Navbar = () => {
       overwrite: true
     })
   }
-
+// style={{ display: side }}
   return (
     <>
       <nav className='navbar' ref={container}>
@@ -53,7 +79,7 @@ const Navbar = () => {
           <li id='menu' onClick={openSidebar}><img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={menu} height={40} alt="" /></li>
         </ul>
       </nav>
-      <ul className='sidebar' style={{ display: side }}>
+      <ul className='sidebar' >
           <li id='close' onClick={closeSidebar}><img src={close} alt="" /></li>
           <li ><Link onClick={closeSidebar} to="home" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Home</Link></li>
           <li><Link onClick={closeSidebar} to="projects" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Projects</Link></li>
