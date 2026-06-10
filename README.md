@@ -3,7 +3,7 @@
 A modern, responsive, and highly interactive personal portfolio website built with **React** and **Vite**. This project showcases my skills, experience, and the projects I've built, featuring smooth animations powered by **GSAP**.
 
 ## 🚀 Live Demo
-*(Add your live link here, e.g., Netlify/Vercel URL)*
+[https://gulamabid-portfolio.online]
 
 ## ✨ Features
 
