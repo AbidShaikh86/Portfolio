@@ -73,6 +73,7 @@ const Navbar = () => {
         </div>
         <ul className='nav'>
           <li className='nav-item'><Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to="home" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Home</Link></li>
+          <li className='nav-item'><Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to="skills" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Skills</Link></li>
           <li className='nav-item'><Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to="projects" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Projects</Link></li>
           <li className='nav-item'><Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to="experience" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Experience</Link></li>
           <li className='nav-item'><Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to="contact" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Contact</Link></li>
@@ -81,7 +82,8 @@ const Navbar = () => {
       </nav>
       <ul className='sidebar' >
           <li id='close' onClick={closeSidebar}><img src={close} alt="" /></li>
-          <li ><Link onClick={closeSidebar} to="home" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Home</Link></li>
+          <li><Link onClick={closeSidebar} to="home" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Home</Link></li>
+          <li><Link onClick={closeSidebar} to="skills" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Skills</Link></li>
           <li><Link onClick={closeSidebar} to="projects" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Projects</Link></li>
           <li><Link onClick={closeSidebar} to="experience" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Experience</Link></li>
           <li><Link onClick={closeSidebar} to="contact" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Contact</Link></li>

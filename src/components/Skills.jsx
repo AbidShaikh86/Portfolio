@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import { skills } from './datasets/skills.json'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Skills = () => {
 
@@ -30,7 +30,7 @@ const Skills = () => {
     useGSAP({scope: container})
 
     return (
-        <section ref={container} className='skill-section'>
+        <section ref={container} className='skill-section' id='skills'>
             <h2>What I do !!</h2>
             <div className="skills">
                 {skills.map((each, index) => {

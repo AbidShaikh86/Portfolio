@@ -56,6 +56,26 @@ function App() {
       duration: 0.5
     },"-=0.5")
 
+    // Skill Section Animation
+    let tl5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#skills",
+        start: "top 70%",
+        end: "top 10%",
+        scrub: 1
+      }
+    })
+    tl5.from('#skills h2',{
+      y: -30,
+      opacity: 0,
+      duration: 0.5
+    })
+    tl5.from('.img',{
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.3,
+      stagger: 0.2
+    })
 
     // Project Page Animation
     let tl2 = gsap.timeline({
