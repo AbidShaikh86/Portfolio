@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import avatar from './img/avatar.png'
+import avatar from './img/avatar.jpeg'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 

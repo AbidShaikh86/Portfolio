@@ -11,12 +11,20 @@
 body{
   background-color: #161513;
 }
+.circle{
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: hsl(120, 100%, 45%);
+}
 .navbar{
+  z-index: 999;
   height: 16vh;
   width: 100%;
   padding: 35px 10vw;
   position: fixed;
-  background-color: #11111170;
+  background-color: #111111a1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +108,8 @@ body{
   justify-content: center;
   z-index: 9;
   img{
+    object-fit: cover;
+    border-radius: 50%;
     height: 25vh;
     z-index: 9;
   }

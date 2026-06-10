@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   
+  const circle = document.querySelector("#circle")
   const container = useRef(null)
 
   useGSAP(() => {
@@ -114,38 +115,35 @@ function App() {
       }
     })
 
-    // const handleWheelUp = () => {
-    //   gsap.to(".navbar",{
-    //     y: -100,
-    //     duration: 1
+    // circle.addEventListener("mousemove",(e) => {
+    //   gsap.to('#circle',{
+    //     x: e.deltaX,
+    //     y: e.deltaY,
+    //     duration: 0.3,
+    //     ease: "elastic.out(1, 0.2)"
     //   })
-    // }
-    // const handleWheelDown = () => {
-    //   gsap.to(".navbar",{
-    //     y: 0,
-    //     duration: 0.3
-    //   })
-    // }
-
-    // document.body.addEventListener("wheel",(e) => {   
-    //   if(e.layerY > 200){
-    //     handleWheelUp()
-    //   }else{
-    //     handleWheelDown()
-    //   }
     // })
 
-    ScrollTrigger.create({
-      trigger: "body",
-      start: "200px top",
-      onEnter: () => gsap.to(".navbar", { y: -100, duration: 1 }),
-      onLeaveBack: () => gsap.to(".navbar", { y: 0, duration: 0.3 })
+    
+    window.addEventListener("wheel",(e) => {
+      if(e.deltaY > 0){
+        gsap.to('.navbar',{
+          y: -150,
+          duration: 0.5
+        })
+      }else{
+        gsap.to('.navbar',{
+          y: 0,
+          duration: 0.5
+        })
+      }
     })
 
   }, {scope: container});
 
   return (
     <div id='papa' ref={container}>
+      {/* <div className="circle" id='circle'></div> */}
       <Navbar />
       <Hero />
       <Projects />
