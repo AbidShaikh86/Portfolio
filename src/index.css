@@ -59,7 +59,7 @@ body{
   right: 0;
   height: 100dvh;
   width: 50%;
-  padding: 2vh 5vw;
+  padding: 5vh 5vw;
   display: flex;
   gap: 20px;
   flex-direction: column;
