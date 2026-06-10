@@ -1,0 +1,44 @@
+{
+    "skills":[
+        {
+            "image": "https://imghosting.in/host/wnx6uh",
+            "name": "HTML"
+        },
+        {
+            "image": "https://imghosting.in/host/or521w",
+            "name": "CSS"
+        },
+        {
+            "image": "https://imghosting.in/host/b1eqd2",
+            "name": "JavaScript"
+        },
+        {
+            "image": "https://imghosting.in/host/qrg1ml",
+            "name": "ReactJS"
+        },
+        {
+            "image": "https://imghosting.in/host/08yj7u",
+            "name": "NodeJS"
+        },
+        {
+            "image": "https://imghosting.in/host/8kxme9",
+            "name": "ExpressJS"
+        },
+        {
+            "image": "https://imghosting.in/host/mt2fqk",
+            "name": "MongoDB"
+        },
+        {
+            "image": "https://imghosting.in/host/vd86wd",
+            "name": "Git"
+        },
+        {
+            "image": "https://imghosting.in/host/2x49o1",
+            "name": "GitHub"
+        },
+        {
+            "image": "https://imghosting.in/host/x3ihd8",
+            "name": "GSAP"
+        }
+    ]
+}

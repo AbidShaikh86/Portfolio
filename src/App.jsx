@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
@@ -115,16 +116,6 @@ function App() {
       }
     })
 
-    // circle.addEventListener("mousemove",(e) => {
-    //   gsap.to('#circle',{
-    //     x: e.deltaX,
-    //     y: e.deltaY,
-    //     duration: 0.3,
-    //     ease: "elastic.out(1, 0.2)"
-    //   })
-    // })
-
-    
     window.addEventListener("wheel",(e) => {
       if(e.deltaY > 0){
         gsap.to('.navbar',{
@@ -146,6 +137,7 @@ function App() {
       {/* <div className="circle" id='circle'></div> */}
       <Navbar />
       <Hero />
+      <Skills />
       <Projects />
       <Experience />
       <Contact />
