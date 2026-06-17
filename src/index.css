@@ -320,3 +320,7 @@ body{
     height: 100px;
   }
 }
+.skill-card{
+  overflow-y: hidden;
+  height: fit-content;
+}

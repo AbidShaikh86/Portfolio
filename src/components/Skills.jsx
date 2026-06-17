@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import { skills } from './datasets/skills.json'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
@@ -7,27 +7,28 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const Skills = () => {
 
     const container = useRef(null)
+    const { contextSafe } = useGSAP({ scope: container })
 
-    const handleMouseEnter = (e) => {
-        gsap.to(e.currentTarget,{
+    const handleMouseEnter = contextSafe((e) => {
+        gsap.to(e.currentTarget, {
             scale: 1.1,
             boxShadow: '0 0 5px 5px #fff',
             duration: 0.5,
             overwrite: true
         })
-    }
+    })
 
-    const handleMouseLeave = (e) => {
-        gsap.to(e.currentTarget,{
-            boxShadow: '0 0 5px 5px transparent',
+    const handleMouseLeave = contextSafe((e) => {
+        gsap.to(e.currentTarget, {
+            boxShadow: 'none',
             scale: 1,
             duration: 0.5,
             ease: 'power2.out',
             overwrite: true
         })
-    }
+    })
 
-    useGSAP({scope: container})
+    
 
     return (
         <section ref={container} className='skill-section' id='skills'>
@@ -35,9 +36,11 @@ const Skills = () => {
             <div className="skills">
                 {skills.map((each, index) => {
                     return (
-                        <div className="img" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} key={index}>
+                        <div className='skill-card' key={index}>
+                        <div className="img" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                             <img src={each.image} alt={each.name} />
                             <h3>{each.name}</h3>
+                        </div>
                         </div>
                     )
                 })}

@@ -6,45 +6,29 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 const Navbar = () => {
-  let [side, setSide] = useState('none')
   const container = useRef(null)
 
-  let tl = gsap.timeline()
-
-  const openSidebar = () => {
-    
-    tl.to('.sidebar',{
+  let tl = useRef(null)
+  const { contextSafe } = useGSAP(() => {
+    tl.current = gsap.timeline({paused: true})
+    .to('.sidebar',{
       x: 0,
       duration: 0.3,
       opacity: 1
     })
-    tl.to('.sidebar li',{
+    .to('.sidebar li',{
       x: 0,
       opacity: 1,
       duration: 0.3,
       stagger: 0.2
     })
-    // setSide('flex')
-  }
-  const closeSidebar = () => {
-    // let tl = gsap.timeline()
-    tl.to('.sidebar li',{
-      x: '100%',
-      opacity: 0,
-      duration: 0.1,
-      stagger: -0.1
-    })
-    tl.to('.sidebar',{
-      x: '100%',
-      duration: 0.1,
-      opacity: 0
-    })
-    
-    // setSide('none')
-  }
+  },{scope: container})
 
-  useGSAP({ scope: container })
-  const handleMouseEnter = (e) => {
+  const openSidebar = () => tl.current.play()
+  const closeSidebar = () => tl.current.reverse()
+
+  // useGSAP({ scope: container })
+  const handleMouseEnter = contextSafe((e) => {
     gsap.to(e.currentTarget, {
       scale: 1.1,
       backgroundColor: "#ffffff17",
@@ -53,8 +37,8 @@ const Navbar = () => {
       ease: "power4.in",
       overwrite: true
     })
-  }
-  const handleMouseLeave = (e) => {
+  })
+  const handleMouseLeave = contextSafe((e) => {
     gsap.to(e.currentTarget, {
       scale: 1,
       backgroundColor: "transparent",
@@ -63,11 +47,11 @@ const Navbar = () => {
       ease: "power4.out",
       overwrite: true
     })
-  }
+  })
 // style={{ display: side }}
   return (
-    <>
-      <nav className='navbar' ref={container}>
+    <div ref={container}>
+      <nav className='navbar' >
         <div className="logo">
           <h2>PORTFOLIO</h2>
         </div>
@@ -81,14 +65,14 @@ const Navbar = () => {
         </ul>
       </nav>
       <ul className='sidebar' >
-          <li id='close' onClick={closeSidebar}><img src={close} alt="" /></li>
-          <li><Link onClick={closeSidebar} to="home" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Home</Link></li>
-          <li><Link onClick={closeSidebar} to="skills" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Skills</Link></li>
-          <li><Link onClick={closeSidebar} to="projects" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Projects</Link></li>
-          <li><Link onClick={closeSidebar} to="experience" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Experience</Link></li>
-          <li><Link onClick={closeSidebar} to="contact" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Contact</Link></li>
-        </ul>
-    </>
+        <li id='close' onClick={closeSidebar}><img src={close} alt="" /></li>
+        <li><Link onClick={closeSidebar} to="home" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Home</Link></li>
+        <li><Link onClick={closeSidebar} to="skills" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Skills</Link></li>
+        <li><Link onClick={closeSidebar} to="projects" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Projects</Link></li>
+        <li><Link onClick={closeSidebar} to="experience" smooth={true} duration={500} style={{ cursor: 'pointer' }} spy={true}>Experience</Link></li>
+        <li><Link onClick={closeSidebar} to="contact" smooth={true} duration={500} style={{ cursor: 'pointer', zIndex: 999 }} spy={true}>Contact</Link></li>
+      </ul>
+    </div>
   )
 }
 

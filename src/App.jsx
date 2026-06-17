@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Skills from './components/Skills'
@@ -12,49 +12,59 @@ import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
-  
-  const circle = document.querySelector("#circle")
   const container = useRef(null)
 
   useGSAP(() => {
+    gsap.from("#contact", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: "#contact",
+      }
+    })
+  }, { scope: container });
+
+
+  const { contextSafe } = useGSAP((e) => {
 
     // Hero Page Animation
     let tl = gsap.timeline()
-    tl.from(".logo h2",{
+    tl.from(".logo h2", {
       y: -30,
       opacity: 0,
       duration: 0.3,
       delay: 0.5
-    }).from(".nav-item",{
+    }).from(".nav-item", {
       y: -30,
       opacity: 0,
       duration: 0.5,
       stagger: 0.3
-    }).from("#menu",{
+    }, "nav-item").from("#menu", {
       x: 30,
       opacity: 0,
       duration: 0.3
-    },"-=0.5").from(".main img",{
+    }, "nav-item").from(".main img", {
       x: 100,
       opacity: 0,
       duration: 0.5
-    }).from(".main h2",{
+    }).from(".main h2", {
       x: -100,
       opacity: 0,
       duration: 0.5
-    }).from(".main span",{
+    }, "hero-txt").from(".main span", {
       y: 30,
       opacity: 0,
       duration: 0.5
-    },"-=0.5").from("#left-btn",{
+    }, "hero-txt").from("#left-btn", {
       x: -150,
       opacity: 0,
       duration: 0.5
-    }).from("#right-btn",{
+    }, "left-btn").from("#right-btn", {
       x: 150,
       opacity: 0,
       duration: 0.5
-    },"-=0.5")
+    }, "left-btn")
 
     // Skill Section Animation
     let tl5 = gsap.timeline({
@@ -65,12 +75,12 @@ function App() {
         scrub: 1
       }
     })
-    tl5.from('#skills h2',{
+    tl5.from('#skills h2', {
       y: -30,
       opacity: 0,
       duration: 0.5
     })
-    tl5.from('.img',{
+    tl5.from('.skill-card', {
       opacity: 0,
       scale: 0.9,
       duration: 0.3,
@@ -79,26 +89,26 @@ function App() {
 
     // Project Page Animation
     let tl2 = gsap.timeline({
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: "#projects",
         start: "top 50%",
         end: "top 0"
       }
     })
-    tl2.from("#projects h2",{
+    tl2.from("#projects h2", {
       y: -30,
       duration: 0.5,
       delay: 0.2,
       opacity: 0
-    }).from("#project-1",{
+    }).from("#project-1", {
       x: -350,
       opacity: 0,
       duration: 0.5
-    }).from("#project-2",{
+    }, "Project-card").from("#project-2", {
       x: 350,
       opacity: 0,
       duration: 0.5
-    },"-=0.5")
+    }, "Project-card")
 
     // Experience and Education section animation
     let tl3 = gsap.timeline({
@@ -109,48 +119,46 @@ function App() {
         scrub: 1
       }
     })
-    tl3.from("#experience h2",{
+    tl3.from("#experience h2", {
       y: -300,
       opacity: 0,
       duration: 0.4
-    }).from("#exp-1",{
+    }).from("#exp-1", {
       x: -300,
       opacity: 0,
       duration: 0.6
-    }).from("#exp-2",{
+    }).from("#exp-2", {
       x: -300,
       opacity: 0,
       duration: 0.6
-    }).from("#exp-3",{
+    }).from("#exp-3", {
       x: -300,
       opacity: 0,
       duration: 0.6
     })
+  })
 
-    gsap.from("#contact",{
-      scale: 0,
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger:{
-        trigger: "#contact",
-      }
-    })
-
-    window.addEventListener("wheel",(e) => {
-      if(e.deltaY > 0){
-        gsap.to('.navbar',{
+  useEffect(() => {
+    const handleScroll = contextSafe((e) => {
+      if (e.deltaY > 0) {
+        gsap.to('.navbar', {
           y: -150,
           duration: 0.5
         })
-      }else{
-        gsap.to('.navbar',{
+      } else {
+        gsap.to('.navbar', {
           y: 0,
           duration: 0.5
         })
       }
     })
 
-  }, {scope: container});
+    window.addEventListener("wheel",handleScroll)
+
+    return () => {
+      window.removeEventListener("wheel",handleScroll)
+    }
+  }, [contextSafe])
 
   return (
     <div id='papa' ref={container}>
