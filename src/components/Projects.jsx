@@ -50,7 +50,7 @@ const Projects = () => {
             <div className="projects">
                 <div className="project" id='project-1' onMouseEnter={handleMouseEnterCard} onMouseLeave={handleMouseLeaveCard}>
                     <img
-                        src='https://i.ibb.co/zWRNRzNS/thumb-1.png'
+                        src='https://imgh.in/host/mgxrmm'
                         alt=""
                     />
                     <h3>Visiter Pass Management System</h3>
@@ -58,7 +58,7 @@ const Projects = () => {
                 </div>
                 <div className="project" id='project-2' onMouseEnter={handleMouseEnterCard} onMouseLeave={handleMouseLeaveCard}>
                     <img
-                        src='https://i.ibb.co/1JRFK9HZ/thumb-2.png'
+                        src='https://imgh.in/host/5ksczn'
                         alt=""
                     />
                     <h3>Task Master</h3>
