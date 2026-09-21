@@ -49,7 +49,7 @@ const Hero = () => {
         <section ref={container} className='hero-page' id='home'>
             <div className="main">
                 <img
-                    src='https://i.ibb.co/V07TFD9x/Avatar.jpg'
+                    src='https://imgh.in/host/5bzvhv'
                     alt=""
                 />
                 <h2 className='left'>Hi, I am GULAMABID</h2>
